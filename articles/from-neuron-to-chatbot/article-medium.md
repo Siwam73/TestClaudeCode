@@ -61,7 +61,7 @@ An epoch is one pass through all four examples. Nobody told it to use 2, 1 and â
 
 Rosenblatt's first perceptron was a program running on an IBM 704, a five-ton computer that filled a room. That was the July 1958 demo. Next, he built one as dedicated hardware. The Mark I Perceptron, first shown to the press in June 1960, had a 20-by-20 grid of light sensors for an eye, 512 hidden units and eight outputs. Its weights were physical knobs, and when it learned, electric motors turned them. The machine survives in the Smithsonian's collection.
 
-So when the *Times* wrote about a computer that would walk and talk, the thing in the room was an IBM mainframe learning to tell left from right. The motorized knobs came two years later. AI hype, it turns out, is older than the microchip.
+So when the *Times* wrote about a computer that would walk and talk, the actual machine was an IBM mainframe learning to tell left from right. The motorized knobs came two years later. AI hype, it turns out, is older than the microchip.
 
 ## 1969: The light switch that stumped AI
 
@@ -256,7 +256,7 @@ In his 1976 book *Computer Power and Human Reason*, Weizenbaum recalled that his
 
 > "What I had not realized is that extremely short exposures to a relatively simple computer program could induce powerful delusional thinking in quite normal people."
 
-That line has aged strangely well, and it cuts two ways now. ChatGPT is a far more capable machine, a trained predictor with billions of learned weights that does things no keyword trick ever could. But fluency is literally what it was trained for. So fluency on its own tells you almost nothing about whether a particular answer is true.
+That line has aged strangely well, and it cuts two ways now. ChatGPT is a far more capable machine, a trained predictor with billions of learned weights that does things no keyword trick ever could. But sounding fluent is a big part of what it was trained for. So fluency on its own tells you almost nothing about whether a particular answer is true.
 
 So is ChatGPT "just autocomplete"? In the narrowest sense, sure. It predicts the next token. But that's a bit like calling a cathedral "just bricks." Accurate, and it skips the part where nobody expected bricks to add up to that.
 
