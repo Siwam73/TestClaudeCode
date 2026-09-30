@@ -1,6 +1,6 @@
 # From an Artificial Neuron to an AI Chatbot
 
-*Every step between a 1943 logic diagram and the chatbot on your phone, checked against the original papers, with code you can run.*
+*Every step between a 1943 logic diagram and the chatbot on your phone, with the dates, the numbers and code you can run.*
 
 ---
 
