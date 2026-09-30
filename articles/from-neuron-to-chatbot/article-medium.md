@@ -1,4 +1,4 @@
-# The Navy Promised a Talking Machine in 1958. It Took 64 Years.
+# The Navy Predicted a Talking Machine in 1958. It Took 64 Years.
 
 *A plain-English trip from the first artificial neuron to ChatGPT, with light switches, a kitchen, and real code output along the way.*
 
@@ -10,7 +10,7 @@ The machine could tell left from right.
 
 That was the demo. A room-sized computer, fed punch cards, learned to sort cards marked on the left from cards marked on the right. It took 50 tries.
 
-Sixty-four years later, ChatGPT showed up and the talking part finally arrived. What surprises most people is how little the basic part changed in between. The unit inside ChatGPT is the same idea that 1958 machine ran on, and you can write it in one line of code.
+Sixty-four years later, ChatGPT showed up and the talking part finally got good. The surprising part is how little the basic building block changed in between. The unit inside ChatGPT is the same idea that 1958 machine ran on, and you can write it in one line of code.
 
 ## The whole idea fits in one line
 
@@ -27,7 +27,7 @@ That's a neuron. The weights are how much you care about each thing. The thresho
 
 Now the jump. GPT-3, the direct ancestor of the first ChatGPT, has 96 layers. Each layer holds 49,152 of these units, with two upgrades: instead of a hard yes or no, each gives a smooth score, and instead of two inputs, each reads 12,288. That's about 4.7 million neurons, and they hold roughly two-thirds of the model's 175 billion adjustable numbers. (The arithmetic, using the architecture table from the GPT-3 paper, lands within 1% of the published total. The script is linked at the end.)
 
-**So the part barely changed.** What changed was everything around it: how the neurons get wired together, how they learn, what they're fed and what they're asked to do. Working that out took about 80 years, including a long stretch when almost nobody thought it would work.
+**So the part barely changed.** What changed was everything around it. Figuring out how to wire millions of them together, and how to train them, took about 80 years, including a long stretch when almost nobody thought it would work.
 
 ## 1943: A brain cell, boiled down to arithmetic
 
@@ -39,7 +39,7 @@ One big thing was missing, though. The 1943 neuron couldn't learn. Every connect
 
 In 1949, psychologist Donald Hebb offered a theory of how brains might learn. His version, roughly: when one brain cell keeps helping another fire, the connection between them gets stronger. Use it and it grows.
 
-(You may know this as "cells that fire together wire together." Hebb never said that. Neuroscientist Carla Shatz coined the phrase in 1992.)
+(You may know this as "cells that fire together wire together." Hebb never wrote that. The catchy version is usually credited to neuroscientist Carla Shatz, who put it in print in 1992.)
 
 ## 1958: A machine that learns from its mistakes
 
@@ -59,9 +59,9 @@ AND: learned in 6 epochs; weights=[2.0, 1.0], bias=-2.0, accuracy=100%
 
 An epoch is one pass through all four examples. Nobody told it to use 2, 1 and −2. It found those numbers within six passes, just by being wrong and adjusting.
 
-Rosenblatt's first perceptron was a program running on an IBM 704, a five-ton computer that filled a room. That was the July 1958 demo. Then he built one as real hardware. The Mark I Perceptron had a 20-by-20 grid of light sensors for an eye, 512 hidden units and eight outputs. Its weights were physical knobs, and when it learned, electric motors turned them. The machine survives in the Smithsonian's collection.
+Rosenblatt's first perceptron was a program running on an IBM 704, a five-ton computer that filled a room. That was the July 1958 demo. Next, he built one as dedicated hardware. The Mark I Perceptron, first shown to the press in June 1960, had a 20-by-20 grid of light sensors for an eye, 512 hidden units and eight outputs. Its weights were physical knobs, and when it learned, electric motors turned them. The machine survives in the Smithsonian's collection.
 
-So when the *Times* talked about a computer that would walk and talk, this was the thing in the room: a box of motorized knobs, learning left from right. AI hype, it turns out, is older than the microchip.
+So when the *Times* wrote about a computer that would walk and talk, the thing in the room was an IBM mainframe learning to tell left from right. The motorized knobs came two years later. AI hype, it turns out, is older than the microchip.
 
 ## 1969: The light switch that stumped AI
 
@@ -86,7 +86,7 @@ switch B down |   off     ON
 
 The two ON cases sit in opposite corners. Try to fence them off from the two "off" cases with a single straight line. You can't. The best one line can manage is three out of four, so the learning rule chases its tail forever, fixing one mistake by creating another.
 
-Marvin Minsky and Seymour Papert of MIT made this rigorous in their 1969 book *Perceptrons*, which mapped out what single-layer networks could and couldn't do. XOR was the easy example. The book went on to prove limits on harder things, like telling whether a shape is all in one piece.
+Marvin Minsky and Seymour Papert of MIT made this rigorous in their 1969 book *Perceptrons*, which mapped out what single-layer networks could and couldn't do. XOR is the simplest case of one problem they analyzed, called parity. They also proved limits on harder things, like telling whether a shape is all in one piece.
 
 The obvious escape hatch was more layers. Minsky and Papert addressed it in a sentence that aged badly:
 
@@ -117,13 +117,13 @@ input (1, 1) -> output 0.016   (target 0)
 
 The problem at the center of the 1969 case against neural networks, solved in about 50 lines of plain Python. The hidden layer reshapes the problem until one straight line is enough.
 
-After that, things moved. By 1989, Yann LeCun's team at AT&T Bell Labs had a backprop-trained network reading handwritten ZIP codes on real U.S. mail. The physics-inspired networks John Hopfield and Hinton built in the '80s later won them the 2024 Nobel Prize in Physics. And in 1997, Sepp Hochreiter and Jürgen Schmidhuber built the LSTM, a unit with a memory cell that helps a network keep track of long sequences like sentences. Until 2017, it was the go-to tool for language.
+After that, things moved. By 1989, Yann LeCun's team at AT&T Bell Labs had used backprop to train a network on handwritten ZIP codes taken from real U.S. mail. The physics-inspired networks John Hopfield and Hinton built in the '80s later won them the 2024 Nobel Prize in Physics. And in 1997, Sepp Hochreiter and Jürgen Schmidhuber built the LSTM, a unit with a memory cell that helps a network keep track of long sequences like sentences. Through most of the 2010s, it was the go-to design for language.
 
 ## 2012: It was never the algorithm
 
 By 1990, the core machinery existed: neurons, layers, backprop. And for roughly the next two decades, neural networks mostly sat on the bench while other methods won the benchmarks.
 
-The idea wasn't wrong. It was starving. There wasn't enough labeled data to learn from, and computers were too slow to train big networks in any reasonable amount of time.
+The idea was fine. It was starving. There wasn't enough labeled data to learn from, and computers were too slow to train big networks in any reasonable amount of time.
 
 Two things fixed that. The first was ImageNet, a competition built on about 1.2 million labeled photos sorted into 1,000 categories. The second was gaming hardware.
 
@@ -135,9 +135,11 @@ Then came 2012. Alex Krizhevsky, Ilya Sutskever and Hinton entered ImageNet with
 
 Every chatbot is built on one skill, and you've been using a tiny version of it for years: the row of suggested words above your phone's keyboard.
 
-The idea goes back to 1951, when Claude Shannon, the father of information theory, ran an experiment. He showed people a stretch of English text and asked them to guess the next letter, then the next. People turned out to be scarily good at it. From their guesses, Shannon estimated that English carries only about 0.6 to 1.3 bits of information per letter, when a random string of 26 letters plus a space would need about 4.75. Most of what we write is predictable.
+The idea goes back to 1951, when Claude Shannon, the Bell Labs mathematician who founded information theory, ran an experiment. He showed people a stretch of English text and asked them to guess the next letter, then the next. People turned out to be scarily good at it. From their guesses, Shannon estimated that English carries only about 0.6 to 1.3 bits of information per letter, when a random string of 26 letters plus a space would need about 4.75. Most of what we write is predictable.
 
-You can build a crude next-letter predictor in about 40 lines of Python. This one reads the GNU General Public License (a long legal document that comes with most Linux systems), counts which character tends to follow each short run of characters, and then writes new text one character at a time: guess, append, repeat. The output depends on how many previous characters it gets to look at:
+### Try it: a 40-line text generator
+
+You can build a crude next-letter predictor in about 40 lines of Python. This one reads the GNU General Public License (a long legal document that comes with many Linux systems), counts which character tends to follow each short run of characters, and then writes new text one character at a time: guess, append, repeat. The output depends on how many previous characters it gets to look at:
 
 ```
 context = 1 character(s):
@@ -152,7 +154,7 @@ context = 6 character(s):
 
 With one character of memory, it's alphabet soup. With six, it sounds like a lawyer talking in their sleep.
 
-The important part is what happens at each step. The model isn't picking a letter. It's producing odds:
+The important part is what happens at each step. The model produces odds for every possible next character:
 
 ```
 What comes after "the co"?
@@ -163,11 +165,13 @@ What comes after "the co"?
   'd': 3%
 ```
 
-Then it rolls weighted dice. **That's exactly how ChatGPT writes to you.** It doesn't compose a reply and then display it. It predicts the odds for the next chunk of text, picks one, adds it to the conversation and goes again, taking everything so far into account, including the words it just wrote.
+Then it rolls weighted dice. **That's exactly how ChatGPT writes to you**, one small chunk at a time: predict the odds, pick one, add it to the conversation, go again. Every pick takes everything so far into account, including the words it just wrote.
 
-So why not just count with more context? Because you run out of things to count. With six characters of context, you've seen most combinations before. With twenty words, almost every combination is brand new. In 2003, Yoshua Bengio and his colleagues proposed the fix that language models still use: turn each word into a list of numbers and let a neural network learn to predict from those.
+### Why counting runs out
 
-Think of it as a map where every word has a location, and words that get used in similar ways end up in the same neighborhood. A sentence the model has never seen can still sit close to thousands it has. In 2013, a Google team led by Tomas Mikolov showed how much structure these maps absorb. Take the location of "king," subtract "man," add "woman," and the nearest word is "queen." The model had picked up something like a direction for gender, and nobody told it to.
+A table of counts runs out fast, though. With a few characters of context, it has seen plenty of examples of each one. With twenty words of context, almost every stretch you meet is brand new, so there's nothing to count. In 2003, Yoshua Bengio and his colleagues proposed the fix that language models still use: turn each word into a list of numbers and let a neural network learn to predict from those.
+
+Think of it as a map where every word has a location, and words that get used in similar ways end up in the same neighborhood. A sentence the model has never seen can still sit close to thousands it has. In 2013, a Google team led by Tomas Mikolov showed how much structure these maps absorb. Take the location of "king," subtract "man," add "woman," and the closest word, once you set aside the three you started with, is "queen." The model had picked up something like a direction for gender, and nobody told it to.
 
 One practical note: modern models don't read whole words. They read tokens, which are common words or pieces of rarer ones. In English, a token averages about four characters, roughly three-quarters of a word.
 
@@ -179,14 +183,18 @@ What does "it" mean? You knew instantly. Streets don't get tired. But to get the
 
 Older networks read like someone peering through a keyhole, one word at a time, carrying a running summary. By the end of a long sentence, the start had gone fuzzy. In 2014, Dzmitry Bahdanau, Kyunghyun Cho and Yoshua Bengio gave translation models a way around that, called attention: while writing each word of the translation, the model could look back over the whole original sentence and decide which words mattered right then.
 
-In June 2017, eight Google researchers pushed that idea as far as it would go, in a paper with a cocky title: "Attention Is All You Need." They threw out word-by-word reading entirely. In their design, the Transformer, every word looks at every other word at once, and each one works out for itself which others are relevant. It set a new record on English-to-German translation after 3.5 days of training on eight GPUs. And since it didn't have to go word by word, it could use every bit of a GPU's parallel muscle. It could scale.
+In June 2017, eight Google researchers pushed that idea as far as it would go, in a paper with a cocky title: "Attention Is All You Need." They threw out word-by-word reading entirely. In their design, the Transformer, every word looks at every other word at once, and each one works out for itself which others are relevant. It set a new record on English-to-German translation after 3.5 days of training on eight GPUs. And since it didn't have to go word by word during training, it could put far more of a GPU's parallel muscle to work. It could scale.
+
+### Inside one Transformer layer
 
 Every layer of a Transformer does two jobs:
 
 - Attention, where each token gathers information from the other tokens. This is where "it" gets linked to "animal." In a chatbot, each token can only look back at earlier ones, never ahead.
 - A feed-forward block, which is simply a big layer of ordinary neurons (the same weighted-sum units from 1958, with a smooth dial instead of a hard threshold) applied to each token separately.
 
-That second job is where the 49,152 neurons per layer from the start of this story live. **The neuron never got replaced. It just got a lot of company.**
+That second job is where the 49,152 neurons per layer from the start of this story live.
+
+**The neuron never got replaced. It just got a lot of company.**
 
 ## Then they just made it bigger
 
@@ -198,19 +206,21 @@ Starting in 2018, OpenAI ran what amounted to one experiment at three sizes. Tak
 
 GPT-2 wrote convincingly enough that OpenAI held back the full model at first, citing misuse worries, and released it in stages over nine months. GPT-3 was ten times bigger than any language model before it (not counting so-called sparse designs). Show it a couple of examples in the prompt and it could translate or answer questions it was never specifically trained for, with no retraining at all.
 
-The growth wasn't luck. In January 2020, Jared Kaplan and colleagues at OpenAI showed that a language model's error falls along a smooth, predictable curve as you add parameters, data and computing power, and the trend held across more than seven orders of magnitude.
+The growth wasn't luck. In January 2020, Jared Kaplan and colleagues at OpenAI showed that a language model's error falls along a smooth, predictable curve as you add parameters, data and computing power, with some trends holding across more than seven orders of magnitude.
 
 Which leaves the obvious question. Why would guessing the next word produce anything that looks like understanding?
 
-The best answer I know: because guessing well is hard. Try predicting the next line of a physics derivation, a legal brief or a Python function. Doing that reliably takes some grasp of what the text is about. Nobody ever teaches the network grammar, facts or reasoning directly. It picks up whatever of each helps it guess better.
+The best answer I know: because guessing well is hard. Try predicting the next line of a physics proof or a Python function. Doing that reliably takes some grasp of what the text is about. Nobody ever teaches the network grammar, let alone physics. It picks up whatever helps it guess better.
 
 ## The genius who answers questions with more questions
 
-There's a catch. A model trained this way continues documents. It isn't an assistant.
+There's a catch. A model trained this way just keeps writing whatever document you started.
 
-OpenAI researcher Jan Leike gave *Fortune* a perfect example in 2022. Ask GPT-3 to "explain the moon landing to a six-year-old," and it might come back with "Please explain climate change to a six-year-old." From the model's point of view, that's a great continuation. On the internet, a list of prompts is usually followed by more prompts.
+OpenAI researcher Jan Leike gave *Fortune* a perfect example in 2022. Ask GPT-3 to "explain the moon landing to a six-year-old," and it might come back with "Please explain climate change to a six-year-old." From the model's point of view, that's a great continuation. On the internet, a list of prompts is often followed by more prompts.
 
-Picture a brilliant new hire who has read the entire internet but has never held a job. The knowledge is all in there. Nobody has shown them what a helpful answer looks like.
+It's like a brilliant new hire who has read the entire internet but has never held a job. The knowledge is all in there. Nobody has shown them what a helpful answer looks like.
+
+### Three rounds of onboarding
 
 OpenAI's fix, laid out in its 2022 InstructGPT paper, worked like three rounds of onboarding:
 
@@ -218,9 +228,9 @@ OpenAI's fix, laid out in its 2022 InstructGPT paper, worked like three rounds o
 2. Run taste tests. The model wrote several answers to the same prompt, people ranked them, and a second network learned to predict those rankings.
 3. Practice against the taste tester. Through trial and error, the model was tuned to write answers that second network would score highly.
 
-Steps 2 and 3 are called reinforcement learning from human feedback, or RLHF. The approach got its first big demo in 2017, when Paul Christiano and colleagues taught a simulated robot to do a backflip using about 900 human judgments of which of two short clips looked more like one. Nobody ever had to define "backflip" in code.
+Steps 2 and 3 are called reinforcement learning from human feedback, or RLHF. One early, memorable demo came in 2017, when Paul Christiano and colleagues taught a simulated robot to do a backflip using about 900 human judgments of which of two short clips looked more like one. Nobody ever had to define "backflip" in code.
 
-The results were lopsided. People preferred answers from a 1.3-billion-weight InstructGPT over those from the 175-billion-weight GPT-3, a model more than 100 times its size. All that knowledge was already inside GPT-3. It just hadn't been taught to use it on your behalf.
+The results were lopsided. People preferred answers from a 1.3-billion-weight InstructGPT over those from the 175-billion-weight GPT-3, a model more than 100 times its size. Knowing a lot and being helpful turned out to be different skills, and the second one could be taught.
 
 On November 30, 2022, OpenAI released ChatGPT, which it described as a "sibling model to InstructGPT," fine-tuned with RLHF from a model in its GPT-3.5 series. Five days later, Sam Altman said it had passed a million users. By January 2023, analysts at UBS, working from web traffic data, estimated 100 million monthly users. In February 2026, OpenAI reported 900 million weekly users.
 
@@ -232,7 +242,7 @@ Put the pieces together and this is the trip your message takes:
 2. The document gets chopped into tokens, and each token becomes an ID number.
 3. Each ID is swapped for its list of numbers, its spot on the word map, learned during training.
 4. Those lists flow up through the layers. In each one, attention lets every token pull in context from the tokens before it, and the neurons transform what each token carries. GPT-3 does this 96 times.
-5. At the top, the model puts out odds for every token in its vocabulary. Same idea as the "the co" example, just spread over tens of thousands of options instead of a few letters.
+5. At the top, the model puts out odds for every token in its vocabulary. Same idea as the "the co" example, just spread over far more options (GPT-3 has 50,257 tokens to choose from) instead of a few letters.
 6. One token gets picked, and not always the most likely one. A setting called temperature controls how adventurous the pick is. Turn it down and the model plays it safe. Turn it up and it takes chances.
 7. That token is added to the document, and the whole thing runs again. And again. Until the model produces a special token that means "I'm done."
 
@@ -240,21 +250,21 @@ Newer chatbots build on this loop without replacing it. "Reasoning" models, star
 
 ## The warning from 1966
 
-ELIZA came out of MIT in 1966. Joseph Weizenbaum wrote it to play a therapist, which it did by spotting keywords and turning your own sentences back into questions. Tell it you're unhappy and it asks about your being unhappy. That was about the extent of it. No neurons, no learning, no understanding.
+ELIZA came out of MIT in 1966. Joseph Weizenbaum wrote it, and its most famous script, DOCTOR, played a therapist by spotting keywords and turning your own sentences back into questions. Tell it you're unhappy and it asks about your being unhappy. That was about the extent of it. It had no neurons and learned nothing.
 
 In his 1976 book *Computer Power and Human Reason*, Weizenbaum recalled that his secretary, who had watched him work on the program for months, asked him to leave the room after only a few exchanges with it. He wrote:
 
 > "What I had not realized is that extremely short exposures to a relatively simple computer program could induce powerful delusional thinking in quite normal people."
 
-That line has aged strangely well, and it cuts two ways now. ChatGPT is not ELIZA. It's a trained predictor with billions of learned weights, and it does things no keyword trick ever could. But fluency is literally what it was trained for. So fluency on its own tells you almost nothing about whether a particular answer is true.
+That line has aged strangely well, and it cuts two ways now. ChatGPT is a far more capable machine, a trained predictor with billions of learned weights that does things no keyword trick ever could. But fluency is literally what it was trained for. So fluency on its own tells you almost nothing about whether a particular answer is true.
 
 So is ChatGPT "just autocomplete"? In the narrowest sense, sure. It predicts the next token. But that's a bit like calling a cathedral "just bricks." Accurate, and it skips the part where nobody expected bricks to add up to that.
 
-In 1958, the Navy promised a machine that would one day talk. It took 64 years, 175 billion knobs and a big slice of the internet. The neuron inside barely changed.
+In 1958, the Navy said its machine would one day talk. It took 64 years, billions of knobs and a big slice of the internet to build one worth talking to. The neuron inside barely changed.
 
 ---
 
-*Want to watch a single neuron fail at the hallway-light problem yourself? All four scripts from this story are [on GitHub](https://github.com/Siwam73/TestClaudeCode/tree/claude/new-session-ua8kpc/articles/from-neuron-to-chatbot/code), and they run on plain Python with nothing to install.*
+*If you want to watch a single neuron fail at the hallway-light problem yourself, all four scripts from this story are [on GitHub](https://github.com/Siwam73/TestClaudeCode/tree/claude/new-session-ua8kpc/articles/from-neuron-to-chatbot/code), and they run on plain Python with nothing to install.*
 
 ## Sources
 
