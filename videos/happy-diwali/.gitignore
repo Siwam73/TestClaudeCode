@@ -1,0 +1,3 @@
+node_modules/
+# intermediate soundtrack written next to the MP4 by render.mjs (regenerable)
+output/*.wav

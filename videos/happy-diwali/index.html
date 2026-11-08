@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Diwali — The Dev Loop</title>
+    <meta name="description" content="A 27.5 s vertical Diwali reel for The Dev Loop, drawn and scored entirely with HTML, CSS and JavaScript." />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="top">
+        <h1><span class="brace">{</span> Happy Diwali <span class="brace">}</span></h1>
+        <p>The Dev Loop · 1080×1920 · 30 fps · 27.5 s</p>
+      </header>
+
+      <section class="stage" aria-label="Video preview">
+        <div class="phone">
+          <canvas id="screen" width="1080" height="1920" aria-label="Animated Diwali greeting from The Dev Loop"></canvas>
+          <button id="bigPlay" class="big-play" aria-label="Play">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+          </button>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Player controls">
+        <div class="row">
+          <button id="play" class="btn icon" aria-label="Play / pause (space)">
+            <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+            <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" /></svg>
+          </button>
+          <button id="restart" class="btn icon" aria-label="Restart">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5V2L7 6l5 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z" /></svg>
+          </button>
+          <input id="seek" type="range" min="0" max="27.5" step="0.001" value="0" aria-label="Seek" />
+          <span id="time" class="time">0.00 / 27.50</span>
+          <button id="mute" class="btn icon" aria-label="Mute / unmute">
+            <svg class="i-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z" /></svg>
+            <svg class="i-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4zm15.6 3 2.1-2.1-1.4-1.4-2.1 2.1-2.1-2.1-1.4 1.4 2.1 2.1-2.1 2.1 1.4 1.4 2.1-2.1 2.1 2.1 1.4-1.4z" /></svg>
+          </button>
+        </div>
+        <div class="row actions">
+          <button id="export" class="btn primary">Export video</button>
+          <button id="wav" class="btn">Download soundtrack (.wav)</button>
+        </div>
+        <p id="status" class="status" role="status">Loading fonts…</p>
+        <p class="hint">Space = play/pause · ← → = step one frame · Export records in real time — keep this tab visible.</p>
+      </section>
+    </main>
+
+    <script src="js/assets-data.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/characters.js"></script>
+    <script src="js/props.js"></script>
+    <script src="js/title.js"></script>
+    <script src="js/endcard.js"></script>
+    <script src="js/scene.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/player.js"></script>
+  </body>
+</html>

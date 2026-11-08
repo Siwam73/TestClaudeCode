@@ -1,0 +1,15 @@
+{
+  "name": "the-dev-loop-happy-diwali",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A vertical Diwali greeting reel for The Dev Loop, drawn and scored with HTML, CSS and JavaScript.",
+  "type": "module",
+  "scripts": {
+    "embed": "node tools/embed-assets.mjs",
+    "render": "node render/render.mjs",
+    "serve": "python3 -m http.server 8080"
+  },
+  "devDependencies": {
+    "playwright": "^1.47.0"
+  }
+}
