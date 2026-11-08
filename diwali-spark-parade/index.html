@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Diwali Spark Parade</title>
+  <meta name="description" content="An original 9:16 animated Diwali greeting: two children and a baby elephant light diyas, wave sparklers and watch a spinning chakri, with an original festive soundtrack.">
+  <meta name="theme-color" content="#FFF7EA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1F1828" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#controls">Skip to controls</a>
+
+  <main class="app">
+    <section class="stage-col" aria-label="Animation preview">
+      <div class="stage" id="stage">
+        <canvas id="scene" width="720" height="1280" role="img"
+          aria-label="Animated greeting reading “Happy Diwali”: two children and a baby elephant light diyas, wave sparklers, skip in a little parade and watch a colourful chakri spin."></canvas>
+        <div class="loader" id="loader" role="status">
+          <span class="loader-flame" aria-hidden="true"></span>
+          <span id="loaderText">Lighting the diyas…</span>
+        </div>
+        <button class="sound-pill" id="soundPill" type="button" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.2L12 5.6v12.8l-4.8-3.9H4z"/><path class="wave" d="M15.5 8.6a4.6 4.6 0 0 1 0 6.8M18.2 6a8.3 8.3 0 0 1 0 12"/></svg>
+          <span>Tap for sound</span>
+        </button>
+      </div>
+      <p class="caption" id="caption">Happy Diwali! Wishing your home light, laughter and a sky full of little sparkles.</p>
+    </section>
+
+    <section class="panel" id="controls" aria-label="Playback, customisation and export">
+      <header class="panel-head">
+        <h1>Diwali Spark Parade</h1>
+        <p>An original festive cartoon · 720×1280 · 30 fps · <span id="timeTotalHead">21.92</span> s loop</p>
+      </header>
+
+      <div class="transport" role="group" aria-label="Playback">
+        <button id="playBtn" class="btn btn-icon btn-primary" type="button" data-state="paused" aria-label="Play" title="Play (Space)">
+          <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5.5h3.6v13H7zM13.4 5.5H17v13h-3.6z"/></svg>
+        </button>
+        <button id="restartBtn" class="btn btn-icon" type="button" aria-label="Restart" title="Restart (R)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path class="stroke" d="M5.5 12a6.5 6.5 0 1 0 2-4.7"/><path d="M4.5 4.2v5h5z"/></svg>
+        </button>
+        <div class="scrub">
+          <input id="scrub" type="range" min="0" max="21.92" step="0.001" value="0" aria-label="Timeline position">
+          <div class="scrub-meta"><span><span id="timeNow">0.00</span> / <span id="timeTotal">21.92</span> s</span><span id="shotName" class="shot">Diya Welcome</span></div>
+        </div>
+        <button id="muteBtn" class="btn btn-icon" type="button" data-state="muted" aria-pressed="true" aria-label="Turn sound on" title="Sound on (M)">
+          <svg class="i-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.2L12 5.6v12.8l-4.8-3.9H4z"/><path class="stroke" d="M15.5 8.6a4.6 4.6 0 0 1 0 6.8M18.2 6a8.3 8.3 0 0 1 0 12"/></svg>
+          <svg class="i-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.2L12 5.6v12.8l-4.8-3.9H4z"/><path class="stroke" d="M15.5 9.5l5 5M20.5 9.5l-5 5"/></svg>
+        </button>
+      </div>
+
+      <div class="grid2">
+        <label class="field"><span>Volume</span><input id="volume" type="range" min="0" max="1" step="0.01" value="0.8"></label>
+        <label class="field"><span>Preview speed</span>
+          <select id="speed">
+            <option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option>
+          </select>
+        </label>
+      </div>
+      <div class="toggles">
+        <label class="check"><input id="reduced" type="checkbox"><span>Reduced motion</span></label>
+        <label class="check"><input id="sfx" type="checkbox" checked><span>Sound effects</span></label>
+        <label class="check"><input id="grain" type="checkbox" checked><span>Paper grain</span></label>
+      </div>
+
+      <details class="card" id="customize">
+        <summary>Customise</summary>
+        <div class="card-body">
+          <div class="grid2">
+            <label class="field"><span>Title line 1</span><input id="line1" type="text" maxlength="14" autocomplete="off" spellcheck="false"></label>
+            <label class="field"><span>Title line 2</span><input id="line2" type="text" maxlength="12" autocomplete="off" spellcheck="false"></label>
+            <label class="field"><span>Studio name</span><input id="brand" type="text" maxlength="28" autocomplete="off"></label>
+            <label class="field"><span>Credit subtitle</span><input id="brandSub" type="text" maxlength="28" autocomplete="off"></label>
+          </div>
+          <label class="check"><input id="showFooter" type="checkbox" checked><span>Show studio credit</span></label>
+          <div class="grid2">
+            <label class="field"><span>Palette</span>
+              <select id="preset">
+                <option value="original">Cream &amp; teal (original)</option>
+                <option value="marigold">Marigold morning</option>
+                <option value="lantern">Lantern night</option>
+              </select>
+            </label>
+            <label class="field"><span>Loop length (s)</span><input id="duration" type="number" min="8" max="60" step="0.01" value="21.92" inputmode="decimal"></label>
+          </div>
+          <fieldset class="swatches">
+            <legend>Colours</legend>
+            <label><input type="color" data-token="backgroundCream"><span>Background</span></label>
+            <label><input type="color" data-token="titleDeepPlum"><span>Line 1</span></label>
+            <label><input type="color" data-token="titleVermilion"><span>Line 2</span></label>
+            <label><input type="color" data-token="titleShadow"><span>Shadow</span></label>
+            <label><input type="color" data-token="cornerTurquoise"><span>Turquoise</span></label>
+            <label><input type="color" data-token="cornerCoral"><span>Coral</span></label>
+            <label><input type="color" data-token="goldAccent"><span>Gold</span></label>
+          </fieldset>
+          <button id="resetBtn" class="btn" type="button">Reset to original</button>
+        </div>
+      </details>
+
+      <section class="card export" aria-labelledby="exportTitle">
+        <h2 id="exportTitle">Export video</h2>
+        <p>Records one loop in real time as a 720×1280, 30 fps WebM with the soundtrack. Keep this tab visible while it records.</p>
+        <div class="export-row">
+          <button id="exportBtn" class="btn btn-primary" type="button">Record WebM (21.9 s)</button>
+          <a id="downloadLink" class="btn" hidden download="diwali-spark-parade.webm">Download WebM</a>
+        </div>
+        <div class="progress" id="exportProg" hidden>
+          <div class="bar"><span id="exportBar"></span></div>
+          <span id="exportLabel" aria-live="polite">0%</span>
+        </div>
+        <p class="status" id="exportStatus" aria-live="polite"></p>
+        <details class="mp4">
+          <summary>Convert to MP4 with FFmpeg</summary>
+          <pre><code id="ffmpegCmd">ffmpeg -i diwali-spark-parade.webm -c:v libx264 -pix_fmt yuv420p -r 30 -c:a aac -b:a 192k -movflags +faststart diwali-spark-parade.mp4</code></pre>
+          <button id="copyCmd" class="btn btn-small" type="button">Copy command</button>
+        </details>
+      </section>
+
+      <p class="hint">Keys: <kbd>Space</kbd> play/pause · <kbd>←</kbd>/<kbd>→</kbd> step a frame (<kbd>Shift</kbd> = 1 s) · <kbd>R</kbd> restart · <kbd>M</kbd> sound</p>
+    </section>
+  </main>
+
+  <!-- SVG rigs + fonts inlined so the page also works from file:// (regenerate with tools/build-offline-bundle.mjs) -->
+  <script src="assets/offline-bundle.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

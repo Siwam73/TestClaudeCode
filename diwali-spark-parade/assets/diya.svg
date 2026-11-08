@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Diwali Spark Parade — original clay diya rig.
+  Origin (0,0) = bottom centre of the bowl. The flame is its own bendable part so it can
+  flicker, lean in a breeze and be hidden for the "unlit" state; glow is painted in code.
+  Same rig conventions as kids-original.svg.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 90" width="480" height="360">
+  <title>Original clay diya — cut-out rig</title>
+  <rect x="0" y="0" width="120" height="90" fill="#FFF7EA"/>
+
+  <g id="diya" data-rig="diya" transform="translate(54 78)" stroke-linejoin="round" stroke-linecap="round">
+    <g data-part="bowl" data-pivot="0 0">
+      <path d="M -27 -17 C -25 -6 -14 -0.5 0 -0.5 C 13 -0.5 22 -5 26 -12 C 29 -14 32 -17 35 -21 C 36.5 -23 35.5 -24.8 33 -24.5 C 29 -24 25 -22.5 21 -21.5 C 10 -19 -12 -19 -23 -20.5 C -26 -20.8 -27.8 -19.5 -27 -17 Z" fill="#C87658" stroke="#624239" stroke-width="3"/>
+      <path d="M -24 -12 C -19 -4.5 -10 -2 0 -2 C 11 -2 19 -4.5 23 -11 C 13 -7.5 -13 -7.5 -24 -12 Z" fill="#A65E46" opacity="0.6"/>
+      <path d="M -23 -20.5 C -12 -24.5 12 -24.5 21 -21.5 C 12 -16.8 -12 -16.8 -23 -20.5 Z" fill="#8F4B39" stroke="#624239" stroke-width="2"/>
+      <path d="M -14 -20.6 C -6 -22.1 4 -22.1 12 -21.1" fill="none" stroke="#F2BB4B" stroke-width="1.3" opacity="0.7"/>
+      <circle cx="-18" cy="-11.5" r="1.8" fill="#FFF1CB"/>
+      <circle cx="-9" cy="-8" r="1.8" fill="#FFF1CB"/>
+      <circle cx="0" cy="-7" r="1.8" fill="#FFF1CB"/>
+      <circle cx="9" cy="-8" r="1.8" fill="#FFF1CB"/>
+      <circle cx="18" cy="-11.5" r="1.8" fill="#FFF1CB"/>
+      <circle cx="-13.5" cy="-14.5" r="1" fill="#FFF1CB"/>
+      <circle cx="-4.5" cy="-12.5" r="1" fill="#FFF1CB"/>
+      <circle cx="4.5" cy="-12.5" r="1" fill="#FFF1CB"/>
+      <circle cx="13.5" cy="-14.5" r="1" fill="#FFF1CB"/>
+      <path d="M 30.5 -22.5 C 32 -25.5 33 -27 32.4 -29" fill="none" stroke="#624239" stroke-width="2.2"/>
+      <!-- almond flame -->
+      <g data-part="flame" data-pivot="32 -28" data-bend="32 -28 32 -58">
+        <path d="M 32 -27 C 25.5 -30 24 -37.5 26.5 -44.5 C 28.5 -50 31 -54 32.5 -58.5 C 34 -53.5 38 -48.5 39 -42.5 C 40 -35.5 37.5 -29 32 -27 Z" fill="#FFCD57" stroke="#E9A23E" stroke-width="1.4"/>
+        <path d="M 32 -29.5 C 29 -31.5 28.5 -36 30 -40 C 31 -43 32 -45 32.5 -47.5 C 33.5 -44.5 35.5 -41.5 35.8 -38 C 36.1 -33.5 34.5 -30.5 32 -29.5 Z" fill="#FFF6CB"/>
+        <circle data-anchor="flame" cx="32" cy="-40" r="1" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

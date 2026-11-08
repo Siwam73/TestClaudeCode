@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Diwali Spark Parade — original children rigs (boy + girl).
+  Hand-authored for this project; no reference artwork was traced or copied.
+
+  RIG CONVENTIONS (read by main.js → loadRigs):
+  • <g data-rig="name">           one character. Its own transform is only for viewing this file.
+  • Rig origin (0,0)              ground contact point between the feet; −y is up. 1 unit = 1 px at scale 1.
+  • data-part="name"              an animatable part; nested parts inherit their parent's motion.
+  • data-pivot="x y"              rotation / scale pivot, in the part's local coordinates.
+  • data-bend="ax ay bx by"       optional bend axis (root → tip) for the soft rubber-hose deformer.
+  • data-attach="tip"             child part rides on the bent tip of its parent (hands on arms).
+  • data-switch="name"            group whose children are alternative states (data-state="…");
+                                  non-default states are display="none" so this file previews cleanly.
+  • data-anchor="name"            invisible locator (hands hold sparklers at "gripL"/"gripR").
+  • transform="scale(-1 1)"       mirrored parts are re-used geometry; the loader bakes transforms.
+  Colours that match palette tokens in main.js are re-tintable at runtime.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="920" height="520">
+  <title>Original Diwali kids — cut-out rigs</title>
+  <rect x="0" y="0" width="460" height="260" fill="#FFF7EA"/>
+
+  <!-- ============================== BOY ============================== -->
+  <g id="boy" data-rig="boy" transform="translate(115 240)" stroke-linejoin="round" stroke-linecap="round">
+
+    <g data-part="legL" data-pivot="-9 -62">
+      <path d="M -21 -70 C -27 -55 -26.5 -33 -19.5 -19 L -5.5 -19 C -2 -33 -0.5 -55 2 -70 Z" fill="#6269A0" stroke="#624239" stroke-width="3"/>
+      <path d="M -17 -52 C -19.5 -43 -18.5 -33 -14.5 -25 M -8.5 -50 C -8 -42 -8.5 -33 -10 -27" fill="none" stroke="#4E5590" stroke-width="1.8"/>
+      <path d="M -20 -20 L -5 -20 L -5.5 -12 L -19.5 -12 Z" fill="#4E5590" stroke="#624239" stroke-width="2.6"/>
+      <path d="M -5 -11 C -2.5 -9 -2.5 -3 -4.5 -1.2 C -6 0 -8 0 -10 0 L -20 0 C -24 0 -27 -2.5 -28.5 -6 C -29.5 -8.5 -30 -11 -28.5 -13.5 C -27.5 -11 -25.5 -9.5 -22.5 -10 C -18 -11 -10 -11.8 -5 -11 Z" fill="#E58D73" stroke="#624239" stroke-width="2.6"/>
+      <circle cx="-14" cy="-5" r="1.7" fill="#F2BB4B"/>
+    </g>
+    <g data-part="legR" data-pivot="-9 -62" transform="scale(-1 1)">
+      <path d="M -21 -70 C -27 -55 -26.5 -33 -19.5 -19 L -5.5 -19 C -2 -33 -0.5 -55 2 -70 Z" fill="#6269A0" stroke="#624239" stroke-width="3"/>
+      <path d="M -17 -52 C -19.5 -43 -18.5 -33 -14.5 -25 M -8.5 -50 C -8 -42 -8.5 -33 -10 -27" fill="none" stroke="#4E5590" stroke-width="1.8"/>
+      <path d="M -20 -20 L -5 -20 L -5.5 -12 L -19.5 -12 Z" fill="#4E5590" stroke="#624239" stroke-width="2.6"/>
+      <path d="M -5 -11 C -2.5 -9 -2.5 -3 -4.5 -1.2 C -6 0 -8 0 -10 0 L -20 0 C -24 0 -27 -2.5 -28.5 -6 C -29.5 -8.5 -30 -11 -28.5 -13.5 C -27.5 -11 -25.5 -9.5 -22.5 -10 C -18 -11 -10 -11.8 -5 -11 Z" fill="#E58D73" stroke="#624239" stroke-width="2.6"/>
+      <circle cx="-14" cy="-5" r="1.7" fill="#F2BB4B"/>
+    </g>
+
+    <g data-part="torso" data-pivot="0 -60">
+      <path d="M -6 -130 L -6 -112 L 6 -112 L 6 -130 Z" fill="#D6976A" stroke="#624239" stroke-width="2.6"/>
+      <!-- mustard short kurta -->
+      <path d="M -19 -118 C -24 -117 -27 -113 -28 -107 L -31 -63 C -31 -58.5 -28 -55.5 -23.5 -55.5 L 23.5 -55.5 C 28 -55.5 31 -58.5 31 -63 L 28 -107 C 27 -113 24 -117 19 -118 C 11 -121 -11 -121 -19 -118 Z" fill="#F0B84F" stroke="#624239" stroke-width="3"/>
+      <path d="M 26.5 -104 L 29 -64 C 29 -60.5 27.5 -58.5 24.5 -58 L 20 -58 C 23 -74 23.5 -92 21.5 -111 C 24 -110 26 -107.5 26.5 -104 Z" fill="#E09A3E" opacity="0.55"/>
+      <path d="M -27 -61.5 L -23.5 -64.5 L -20 -61.5 L -16.5 -64.5 L -13 -61.5 L -9.5 -64.5 L -6 -61.5 L -2.5 -64.5 L 1 -61.5 L 4.5 -64.5 L 8 -61.5 L 11.5 -64.5 L 15 -61.5 L 18.5 -64.5 L 22 -61.5 L 25.5 -64.5 L 28 -62" fill="none" stroke="#42A8A2" stroke-width="1.7"/>
+      <path d="M -9 -120 C -6 -117 6 -117 9 -120 L 9.5 -115.5 C 6 -112 -6 -112 -9.5 -115.5 Z" fill="#D99A3A" stroke="#624239" stroke-width="2.2"/>
+      <path d="M 0 -113 L 0 -92" fill="none" stroke="#D99A3A" stroke-width="1.8"/>
+      <circle cx="0" cy="-108" r="1.6" fill="#FFF1CB"/>
+      <circle cx="0" cy="-102" r="1.6" fill="#FFF1CB"/>
+      <circle cx="0" cy="-96" r="1.6" fill="#FFF1CB"/>
+
+      <!-- arms (long kurta sleeves, mitten hands) -->
+      <g data-part="armL" data-pivot="-20 -111" data-bend="-20 -112 -20.5 -81">
+        <path d="M -26.5 -112 C -27.5 -101 -27.5 -91 -26.8 -83 L -14.2 -83 C -13.6 -91 -13.6 -101 -14 -112 C -16 -118 -24.5 -118 -26.5 -112 Z" fill="#F0B84F" stroke="#624239" stroke-width="2.8"/>
+        <path d="M -21 -103 C -22 -98 -21.5 -94 -20 -91" fill="none" stroke="#D99A3A" stroke-width="1.6"/>
+        <path d="M -27 -88 L -14 -88 L -14.2 -82 L -26.8 -82 Z" fill="#D99A3A" stroke="#624239" stroke-width="2.4"/>
+        <g data-part="handL" data-pivot="-20.5 -81" data-attach="tip">
+          <circle cx="-20.5" cy="-75" r="6.6" fill="#D6976A" stroke="#624239" stroke-width="2.6"/>
+          <path d="M -15.5 -78.5 C -13.5 -77.5 -13.5 -74.5 -15.2 -73.6" fill="none" stroke="#624239" stroke-width="1.6"/>
+          <circle data-anchor="gripL" cx="-20.5" cy="-75" r="1" fill="none"/>
+        </g>
+      </g>
+      <g data-part="armR" data-pivot="-20 -111" data-bend="-20 -112 -20.5 -81" transform="scale(-1 1)">
+        <path d="M -26.5 -112 C -27.5 -101 -27.5 -91 -26.8 -83 L -14.2 -83 C -13.6 -91 -13.6 -101 -14 -112 C -16 -118 -24.5 -118 -26.5 -112 Z" fill="#F0B84F" stroke="#624239" stroke-width="2.8"/>
+        <path d="M -21 -103 C -22 -98 -21.5 -94 -20 -91" fill="none" stroke="#D99A3A" stroke-width="1.6"/>
+        <path d="M -27 -88 L -14 -88 L -14.2 -82 L -26.8 -82 Z" fill="#D99A3A" stroke="#624239" stroke-width="2.4"/>
+        <g data-part="handR" data-pivot="-20.5 -81" data-attach="tip">
+          <circle cx="-20.5" cy="-75" r="6.6" fill="#D6976A" stroke="#624239" stroke-width="2.6"/>
+          <path d="M -15.5 -78.5 C -13.5 -77.5 -13.5 -74.5 -15.2 -73.6" fill="none" stroke="#624239" stroke-width="1.6"/>
+          <circle data-anchor="gripR" cx="-20.5" cy="-75" r="1" fill="none"/>
+        </g>
+      </g>
+
+      <g data-part="head" data-pivot="0 -121">
+        <!-- side-swept wavy hair, back mass -->
+        <path d="M -37.5 -146 C -43 -170 -33 -199 -5 -204 C 20 -208 41 -195 42 -172 C 42.5 -162 41 -153 38 -146 C 20 -150 -20 -150 -37.5 -146 Z" fill="#3B2A33" stroke="#624239" stroke-width="3"/>
+        <ellipse cx="-35" cy="-152" rx="6.5" ry="8.5" fill="#D6976A" stroke="#624239" stroke-width="2.6"/>
+        <path d="M -36.5 -156 C -39 -153 -38.5 -150 -36 -148" fill="none" stroke="#B87552" stroke-width="1.6"/>
+        <ellipse cx="35" cy="-152" rx="6.5" ry="8.5" fill="#D6976A" stroke="#624239" stroke-width="2.6"/>
+        <path d="M 36.5 -156 C 39 -153 38.5 -150 36 -148" fill="none" stroke="#B87552" stroke-width="1.6"/>
+        <!-- face with a small pointed chin -->
+        <path d="M 0 -191 C 21 -191 36 -177 36 -158 C 36 -143 27 -131 13 -125 C 7 -122.5 2 -121.5 0 -121.5 C -2 -121.5 -7 -122.5 -13 -125 C -27 -131 -36 -143 -36 -158 C -36 -177 -21 -191 0 -191 Z" fill="#D6976A" stroke="#624239" stroke-width="3"/>
+        <ellipse cx="-22" cy="-141" rx="6.5" ry="3.8" fill="#E58D73" opacity="0.45"/>
+        <ellipse cx="22" cy="-141" rx="6.5" ry="3.8" fill="#E58D73" opacity="0.45"/>
+        <circle cx="-25" cy="-146" r="1.05" fill="#9E5A40"/>
+        <circle cx="-21" cy="-148" r="1.05" fill="#9E5A40"/>
+        <circle cx="-18" cy="-145.5" r="1.05" fill="#9E5A40"/>
+        <circle cx="18" cy="-145.5" r="1.05" fill="#9E5A40"/>
+        <circle cx="21" cy="-148" r="1.05" fill="#9E5A40"/>
+        <circle cx="25" cy="-146" r="1.05" fill="#9E5A40"/>
+        <path d="M -2.5 -146.5 C -1.5 -144 1.5 -144 2.5 -146.5" fill="none" stroke="#9E5A40" stroke-width="1.8"/>
+
+        <g data-part="eyes" data-switch="eyes" data-pivot="0 -154">
+          <g data-state="open">
+            <ellipse cx="-13" cy="-154" rx="6" ry="8" fill="#2E1F2B"/>
+            <circle cx="-11" cy="-157.5" r="2.4" fill="#FFFFFF"/>
+            <circle cx="-15" cy="-150.8" r="1.1" fill="#FFFFFF"/>
+            <ellipse cx="13" cy="-154" rx="6" ry="8" fill="#2E1F2B"/>
+            <circle cx="15" cy="-157.5" r="2.4" fill="#FFFFFF"/>
+            <circle cx="11" cy="-150.8" r="1.1" fill="#FFFFFF"/>
+          </g>
+          <g data-state="wide" display="none">
+            <ellipse cx="-13" cy="-155" rx="7.2" ry="9.4" fill="#2E1F2B"/>
+            <circle cx="-10.6" cy="-159" r="2.8" fill="#FFFFFF"/>
+            <circle cx="-15.4" cy="-151" r="1.3" fill="#FFFFFF"/>
+            <ellipse cx="13" cy="-155" rx="7.2" ry="9.4" fill="#2E1F2B"/>
+            <circle cx="15.4" cy="-159" r="2.8" fill="#FFFFFF"/>
+            <circle cx="10.6" cy="-151" r="1.3" fill="#FFFFFF"/>
+          </g>
+          <g data-state="happy" display="none" fill="none" stroke="#2E1F2B" stroke-width="2.8">
+            <path d="M -19 -151.5 Q -13 -160 -7 -151.5"/>
+            <path d="M 7 -151.5 Q 13 -160 19 -151.5"/>
+          </g>
+          <g data-state="closed" display="none" fill="none" stroke="#2E1F2B" stroke-width="2.6">
+            <path d="M -19 -154 Q -13 -150 -7 -154"/>
+            <path d="M 7 -154 Q 13 -150 19 -154"/>
+          </g>
+          <g data-state="dizzy" display="none" fill="none" stroke="#2E1F2B" stroke-width="2">
+            <path d="M -12.2 -154 C -12.2 -153.9 -12.1 -153.4 -12.2 -153.2 C -12.3 -152.9 -12.6 -152.6 -13 -152.5 C -13.4 -152.4 -13.9 -152.4 -14.3 -152.7 C -14.7 -152.9 -15.1 -153.5 -15.2 -154 C -15.3 -154.5 -15.2 -155.3 -14.8 -155.8 C -14.4 -156.3 -13.7 -156.8 -13 -156.9 C -12.3 -157 -11.3 -156.8 -10.7 -156.3 C -10.1 -155.8 -9.5 -154.8 -9.4 -154 C -9.3 -153.2 -9.6 -151.9 -10.2 -151.2 C -10.8 -150.5 -12 -149.8 -13 -149.7 C -14 -149.6 -15.5 -150 -16.3 -150.7 C -17.1 -151.4 -17.9 -152.8 -18 -154 C -18.1 -155.2 -17.6 -156.8 -16.8 -157.8 C -15.9 -158.7 -14.3 -159.6 -13 -159.7 C -11.7 -159.8 -9.8 -159.2 -8.7 -158.3 C -7.7 -157.3 -7 -154.7 -6.6 -154"/>
+            <path d="M 12.2 -154 C 12.2 -154.1 12.1 -154.6 12.2 -154.8 C 12.3 -155.1 12.6 -155.4 13 -155.5 C 13.4 -155.6 13.9 -155.6 14.3 -155.3 C 14.7 -155.1 15.1 -154.5 15.2 -154 C 15.3 -153.5 15.2 -152.7 14.8 -152.2 C 14.4 -151.7 13.7 -151.2 13 -151.1 C 12.3 -151 11.3 -151.2 10.7 -151.7 C 10.1 -152.2 9.5 -153.2 9.4 -154 C 9.3 -154.8 9.6 -156.1 10.2 -156.8 C 10.8 -157.5 12 -158.2 13 -158.3 C 14 -158.4 15.5 -158 16.3 -157.3 C 17.1 -156.6 17.9 -155.2 18 -154 C 18.1 -152.8 17.6 -151.2 16.8 -150.2 C 15.9 -149.3 14.3 -148.4 13 -148.3 C 11.7 -148.2 9.8 -148.8 8.7 -149.7 C 7.7 -150.7 7 -153.3 6.6 -154"/>
+          </g>
+        </g>
+
+        <!-- slightly asymmetrical eyebrows -->
+        <g data-part="brows" data-pivot="0 -169" fill="none" stroke="#3B2A33" stroke-width="2.8">
+          <path d="M -20 -168 Q -14.5 -173.5 -7.5 -170"/>
+          <path d="M 7.5 -167.5 Q 13 -169.5 19.5 -166.5"/>
+        </g>
+
+        <g data-part="mouth" data-switch="mouth" data-pivot="0 -133">
+          <g data-state="smile">
+            <path d="M -8.5 -137.5 C -4 -136 4 -136 8.5 -137.5 C 7.5 -130.5 3.5 -127.5 0 -127.5 C -3.5 -127.5 -7.5 -130.5 -8.5 -137.5 Z" fill="#7A3440" stroke="#624239" stroke-width="2.2"/>
+            <path d="M -4 -129.6 C -2 -132 2 -132 4 -129.6 C 2.5 -128.2 -2.5 -128.2 -4 -129.6 Z" fill="#EF8A87"/>
+          </g>
+          <g data-state="grin" display="none">
+            <path d="M -8 -135 Q 0 -128 8 -135" fill="none" stroke="#624239" stroke-width="2.6"/>
+          </g>
+          <g data-state="o" display="none">
+            <ellipse cx="0" cy="-132" rx="3.6" ry="4.4" fill="#7A3440" stroke="#624239" stroke-width="2"/>
+          </g>
+          <g data-state="laugh" display="none">
+            <path d="M -10.5 -138.5 C -5 -136.5 5 -136.5 10.5 -138.5 C 9.5 -128 4.5 -124.5 0 -124.5 C -4.5 -124.5 -9.5 -128 -10.5 -138.5 Z" fill="#7A3440" stroke="#624239" stroke-width="2.2"/>
+            <path d="M -5 -127.3 C -2.5 -130.5 2.5 -130.5 5 -127.3 C 3 -125.6 -3 -125.6 -5 -127.3 Z" fill="#EF8A87"/>
+          </g>
+          <g data-state="wobble" display="none">
+            <path d="M -8 -132 C -6 -135 -4 -135 -2 -132 C 0 -129 2 -129 4 -132 C 5.5 -134 7 -134 8.5 -132.5" fill="none" stroke="#624239" stroke-width="2.4"/>
+          </g>
+        </g>
+
+        <!-- fringe swept toward screen-right, with a playful cowlick -->
+        <g data-part="hairFront" data-pivot="0 -188">
+          <path d="M -37 -156 C -41 -177 -28 -198 -5 -201 C 17 -204 37 -194 40.5 -175 C 42 -166 40 -158 36.5 -151 C 35 -157 32 -162 27 -164.5 C 19.5 -168 13 -163 8.5 -167.5 C 3 -173 -5 -171.5 -11 -175.5 C -17 -179.5 -24 -181 -28.5 -177.5 C -33 -174 -35 -165 -37 -156 Z" fill="#3B2A33" stroke="#624239" stroke-width="3"/>
+          <path d="M -22 -191 C -14 -196 -4 -198 6 -197" fill="none" stroke="#6B4C5E" stroke-width="2.2"/>
+          <path d="M 18 -192 C 24 -189 30 -184 33 -178" fill="none" stroke="#6B4C5E" stroke-width="2"/>
+          <path d="M 27 -164.5 C 32 -161 33 -154.5 29.5 -150.5 C 30.5 -155 28.5 -159.5 24.5 -162.5 Z" fill="#3B2A33" stroke="#624239" stroke-width="2.2"/>
+          <path d="M 5 -200.5 C 6 -210 16 -215 24 -209.5 C 18.5 -210.5 13.5 -207 12.5 -200.5 Z" fill="#3B2A33" stroke="#624239" stroke-width="2.6"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============================== GIRL ============================== -->
+  <g id="girl" data-rig="girl" transform="translate(340 240)" stroke-linejoin="round" stroke-linecap="round">
+
+    <g data-part="legL" data-pivot="-8 -60">
+      <path d="M -13 -66 L -12.5 -13 L -4.5 -13 L -4 -66 Z" fill="#C98A5E" stroke="#624239" stroke-width="2.6"/>
+      <path d="M -12.5 -12.5 C -15 -10 -17.5 -5 -17 -2 C -16.5 0 -14 0.2 -11 0.2 L -4.5 0.2 C -3 0 -2.5 -2 -3 -5 C -3.5 -8 -4 -11 -4.5 -12.5 Z" fill="#C98A5E" stroke="#624239" stroke-width="2.6"/>
+      <path d="M -16.3 -2.6 C -13.5 -0.9 -8 -0.7 -3.6 -1.6" fill="none" stroke="#E75A42" stroke-width="1.4"/>
+      <circle cx="-12.6" cy="-12.5" r="1.7" fill="#F2BB4B"/>
+      <circle cx="-9.8" cy="-11.8" r="1.7" fill="#F2BB4B"/>
+      <circle cx="-7" cy="-11.8" r="1.7" fill="#F2BB4B"/>
+      <circle cx="-4.4" cy="-12.5" r="1.7" fill="#F2BB4B"/>
+    </g>
+    <g data-part="legR" data-pivot="-8 -60" transform="scale(-1 1)">
+      <path d="M -13 -66 L -12.5 -13 L -4.5 -13 L -4 -66 Z" fill="#C98A5E" stroke="#624239" stroke-width="2.6"/>
+      <path d="M -12.5 -12.5 C -15 -10 -17.5 -5 -17 -2 C -16.5 0 -14 0.2 -11 0.2 L -4.5 0.2 C -3 0 -2.5 -2 -3 -5 C -3.5 -8 -4 -11 -4.5 -12.5 Z" fill="#C98A5E" stroke="#624239" stroke-width="2.6"/>
+      <path d="M -16.3 -2.6 C -13.5 -0.9 -8 -0.7 -3.6 -1.6" fill="none" stroke="#E75A42" stroke-width="1.4"/>
+      <circle cx="-12.6" cy="-12.5" r="1.7" fill="#F2BB4B"/>
+      <circle cx="-9.8" cy="-11.8" r="1.7" fill="#F2BB4B"/>
+      <circle cx="-7" cy="-11.8" r="1.7" fill="#F2BB4B"/>
+      <circle cx="-4.4" cy="-12.5" r="1.7" fill="#F2BB4B"/>
+    </g>
+
+    <!-- turquoise flowing skirt with a gold border -->
+    <g data-part="skirt" data-pivot="0 -86">
+      <path d="M -21 -87 C -9 -89.5 9 -89.5 21 -87 C 27 -64 35 -38 43 -15 C 37 -10.5 29 -13.5 22 -10.5 C 14 -7.5 6 -10.5 0 -8.5 C -6 -10.5 -14 -7.5 -22 -10.5 C -29 -13.5 -37 -10.5 -43 -15 C -35 -38 -27 -64 -21 -87 Z" fill="#42A8A2" stroke="#624239" stroke-width="3"/>
+      <path d="M 14 -86 C 19 -62 26 -38 33 -15 C 36 -14 39.5 -14 43 -15 C 35 -38 27 -64 21 -87 C 18.5 -86.5 16 -86.2 14 -86 Z" fill="#2F8C87" opacity="0.45"/>
+      <path d="M -9 -84 C -12 -60 -16 -36 -20 -14 M 9 -84 C 12 -60 16 -36 20 -14 M 0 -85 C 0 -60 0 -35 0 -11" fill="none" stroke="#2F8C87" stroke-width="1.8"/>
+      <path d="M -40 -19 C -33 -15.5 -28 -18 -22 -15.5 C -14 -12.5 -6 -15.5 0 -13.5 C 6 -15.5 14 -12.5 22 -15.5 C 28 -18 33 -15.5 40 -19" fill="none" stroke="#F2BB4B" stroke-width="3.2"/>
+      <circle cx="-14" cy="-42" r="1.5" fill="#F2BB4B"/>
+      <circle cx="12" cy="-54" r="1.5" fill="#F2BB4B"/>
+      <circle cx="-5" cy="-29" r="1.5" fill="#F2BB4B"/>
+      <circle cx="25" cy="-33" r="1.5" fill="#F2BB4B"/>
+      <circle cx="-27" cy="-30" r="1.5" fill="#F2BB4B"/>
+      <circle cx="-9" cy="-64" r="1.5" fill="#F2BB4B"/>
+    </g>
+
+    <g data-part="torso" data-pivot="0 -86">
+      <path d="M -5.5 -130 L -5.5 -113 L 5.5 -113 L 5.5 -130 Z" fill="#C98A5E" stroke="#624239" stroke-width="2.6"/>
+      <!-- rose-pink tunic -->
+      <path d="M -18 -118 C -23 -117 -25.5 -113 -25.5 -107 L -24.5 -88 C -16 -84.5 16 -84.5 24.5 -88 L 25.5 -107 C 25.5 -113 23 -117 18 -118 C 10 -121 -10 -121 -18 -118 Z" fill="#EC789A" stroke="#624239" stroke-width="3"/>
+      <path d="M -8.5 -119.5 C -6 -110.5 6 -110.5 8.5 -119.5 Z" fill="#C98A5E"/>
+      <path d="M -8.5 -119.5 C -6 -110.5 6 -110.5 8.5 -119.5" fill="none" stroke="#F2BB4B" stroke-width="2.2"/>
+      <circle cx="-10" cy="-101" r="1.4" fill="#FFF1CB"/>
+      <circle cx="10" cy="-99" r="1.4" fill="#FFF1CB"/>
+      <circle cx="0" cy="-95" r="1.4" fill="#FFF1CB"/>
+      <path d="M -24.5 -91 C -16 -87.5 16 -87.5 24.5 -91 L 24.6 -86.5 C 16 -83 -16 -83 -24.6 -86.5 Z" fill="#F2BB4B" stroke="#624239" stroke-width="2.2"/>
+
+      <g data-part="armL" data-pivot="-19 -111" data-bend="-19 -112 -20 -81">
+        <path d="M -24.5 -108 C -25 -98 -25 -90 -24.8 -83 L -15 -83 C -14.8 -90 -14.8 -98 -15 -108 Z" fill="#C98A5E" stroke="#624239" stroke-width="2.6"/>
+        <path d="M -24.9 -87.5 L -14.9 -87.5" fill="none" stroke="#F2BB4B" stroke-width="2.4"/>
+        <path d="M -24.9 -84.3 L -14.9 -84.3" fill="none" stroke="#42A8A2" stroke-width="2.2"/>
+        <path d="M -27.5 -110 C -29.5 -117 -21.5 -120.5 -15 -117.5 C -11.5 -115.5 -11.5 -106 -13.5 -101 C -18 -98 -24.5 -98.5 -27.5 -102 C -28.5 -104.5 -28.5 -107.5 -27.5 -110 Z" fill="#EC789A" stroke="#624239" stroke-width="2.8"/>
+        <path d="M -27 -102.5 C -22 -99 -17 -99 -13.5 -101.5" fill="none" stroke="#F2BB4B" stroke-width="2"/>
+        <g data-part="handL" data-pivot="-20 -81" data-attach="tip">
+          <circle cx="-20" cy="-75.5" r="6.2" fill="#C98A5E" stroke="#624239" stroke-width="2.6"/>
+          <path d="M -15.2 -78.8 C -13.3 -77.8 -13.3 -75 -14.9 -74.1" fill="none" stroke="#624239" stroke-width="1.5"/>
+          <circle data-anchor="gripL" cx="-20" cy="-75.5" r="1" fill="none"/>
+        </g>
+      </g>
+      <g data-part="armR" data-pivot="-19 -111" data-bend="-19 -112 -20 -81" transform="scale(-1 1)">
+        <path d="M -24.5 -108 C -25 -98 -25 -90 -24.8 -83 L -15 -83 C -14.8 -90 -14.8 -98 -15 -108 Z" fill="#C98A5E" stroke="#624239" stroke-width="2.6"/>
+        <path d="M -24.9 -87.5 L -14.9 -87.5" fill="none" stroke="#F2BB4B" stroke-width="2.4"/>
+        <path d="M -24.9 -84.3 L -14.9 -84.3" fill="none" stroke="#42A8A2" stroke-width="2.2"/>
+        <path d="M -27.5 -110 C -29.5 -117 -21.5 -120.5 -15 -117.5 C -11.5 -115.5 -11.5 -106 -13.5 -101 C -18 -98 -24.5 -98.5 -27.5 -102 C -28.5 -104.5 -28.5 -107.5 -27.5 -110 Z" fill="#EC789A" stroke="#624239" stroke-width="2.8"/>
+        <path d="M -27 -102.5 C -22 -99 -17 -99 -13.5 -101.5" fill="none" stroke="#F2BB4B" stroke-width="2"/>
+        <g data-part="handR" data-pivot="-20 -81" data-attach="tip">
+          <circle cx="-20" cy="-75.5" r="6.2" fill="#C98A5E" stroke="#624239" stroke-width="2.6"/>
+          <path d="M -15.2 -78.8 C -13.3 -77.8 -13.3 -75 -14.9 -74.1" fill="none" stroke="#624239" stroke-width="1.5"/>
+          <circle data-anchor="gripR" cx="-20" cy="-75.5" r="1" fill="none"/>
+        </g>
+      </g>
+
+      <g data-part="head" data-pivot="0 -121">
+        <!-- single high braided ponytail, swinging on its own bend axis -->
+        <g data-part="braid" data-pivot="-15 -197" data-bend="-15 -197 -48 -118">
+          <path d="M -13.6 -202.1 C -15.6 -202.2 -21.7 -203.6 -25.7 -203 C -29.6 -202.5 -34 -200.9 -37.4 -198.8 C -40.8 -196.7 -43.7 -193.5 -46 -190.4 C -48.3 -187.4 -49.9 -183.8 -51.3 -180.4 C -52.7 -176.9 -53.6 -173.3 -54.4 -169.8 C -55.1 -166.2 -55.5 -162.6 -55.8 -159.1 C -56.1 -155.5 -56.1 -152 -56 -148.4 C -55.9 -144.9 -55.7 -141.3 -55.3 -137.8 C -54.9 -134.3 -54.3 -130.9 -53.7 -127.4 C -53 -124 -52.5 -119.2 -51.4 -117.2 C -50.3 -115.1 -48.4 -114.8 -47.3 -115.1 C -46.2 -115.4 -44.7 -116.6 -44.6 -118.8 C -44.5 -121.1 -45.9 -125.4 -46.4 -128.7 C -47 -132 -47.4 -135.3 -47.6 -138.6 C -47.9 -141.9 -48 -145.2 -48 -148.5 C -48 -151.8 -47.8 -155.1 -47.5 -158.3 C -47.1 -161.6 -46.6 -164.8 -45.8 -167.9 C -45.1 -171 -44.1 -174.1 -42.9 -176.9 C -41.7 -179.8 -40.2 -182.6 -38.4 -184.8 C -36.6 -187.1 -34.5 -189.1 -32.2 -190.5 C -29.9 -191.8 -27.3 -192.7 -24.6 -192.9 C -22 -193.2 -17.8 -192.1 -16.4 -191.9 Z" fill="#3B2A33" stroke="#624239" stroke-width="2.6"/>
+          <g fill="#4E3946" stroke="#624239" stroke-width="1.4">
+            <path d="M -14.5 -196.2 C -14 -201.8 -19.7 -206 -24.9 -203.8 C -25.4 -198.2 -19.7 -194 -14.5 -196.2 Z"/>
+            <path d="M -24 -199.8 C -29.3 -201 -34.1 -196.2 -32.7 -190.9 C -27.4 -189.6 -22.6 -194.5 -24 -199.8 Z"/>
+            <path d="M -32.1 -195.5 C -35.5 -199.6 -42 -198.7 -44.1 -193.8 C -40.7 -189.7 -34.2 -190.6 -32.1 -195.5 Z"/>
+            <path d="M -41 -191.2 C -45.6 -188.9 -46.1 -182.6 -41.9 -179.6 C -37.3 -181.9 -36.8 -188.3 -41 -191.2 Z"/>
+            <path d="M -44.4 -182.6 C -49.1 -184.4 -53.9 -180.6 -53.3 -175.7 C -48.7 -173.9 -43.8 -177.7 -44.4 -182.6 Z"/>
+            <path d="M -49.8 -174.6 C -53 -171.1 -51.2 -165.4 -46.6 -164.2 C -43.4 -167.8 -45.1 -173.5 -49.8 -174.6 Z"/>
+            <path d="M -50 -165.3 C -54.6 -165.8 -58 -161.1 -56.2 -156.9 C -51.6 -156.4 -48.2 -161.1 -50 -165.3 Z"/>
+            <path d="M -52.8 -156.3 C -55.1 -152.4 -52.4 -147.5 -47.9 -147.4 C -45.7 -151.2 -48.4 -156.1 -52.8 -156.3 Z"/>
+            <path d="M -51.2 -147.1 C -55.5 -146.7 -57.9 -142 -55.5 -138.4 C -51.3 -138.7 -48.9 -143.5 -51.2 -147.1 Z"/>
+            <path d="M -52.3 -137.7 C -53.8 -133.9 -50.7 -129.8 -46.6 -130.3 C -45.1 -134.1 -48.2 -138.2 -52.3 -137.7 Z"/>
+            <path d="M -49.4 -128.8 C -53.3 -128 -54.9 -123.3 -52.4 -120.3 C -48.5 -121.1 -46.9 -125.8 -49.4 -128.8 Z"/>
+          </g>
+          <g data-part="tassel" data-pivot="-47 -119" data-attach="tip">
+            <path d="M -49.5 -121 L -44.5 -119.5 L -45.5 -115.5 L -50 -116.5 Z" fill="#F2BB4B" stroke="#624239" stroke-width="1.8"/>
+            <path d="M -50 -116.5 C -53 -110 -51.5 -104 -48 -101.5 C -45.5 -104.5 -44 -110 -45.5 -115.5 Z" fill="#E75A42" stroke="#624239" stroke-width="2"/>
+          </g>
+        </g>
+        <ellipse cx="-12" cy="-200" rx="11" ry="7.5" fill="#3B2A33" stroke="#624239" stroke-width="2.6"/>
+        <path d="M -38 -146 C -42 -172 -26 -199 0 -200 C 26 -199 42 -172 38 -146 C 20 -150 -20 -150 -38 -146 Z" fill="#3B2A33" stroke="#624239" stroke-width="3"/>
+        <ellipse cx="-35" cy="-152" rx="6" ry="8" fill="#C98A5E" stroke="#624239" stroke-width="2.6"/>
+        <ellipse cx="35" cy="-152" rx="6" ry="8" fill="#C98A5E" stroke="#624239" stroke-width="2.6"/>
+        <circle cx="-35.5" cy="-142.5" r="2.4" fill="#F2BB4B" stroke="#624239" stroke-width="1.2"/>
+        <circle cx="-35.5" cy="-138.3" r="1.6" fill="#F2BB4B"/>
+        <circle cx="35.5" cy="-142.5" r="2.4" fill="#F2BB4B" stroke="#624239" stroke-width="1.2"/>
+        <circle cx="35.5" cy="-138.3" r="1.6" fill="#F2BB4B"/>
+        <!-- round-cheeked face -->
+        <path d="M 0 -191 C 21 -191 36.5 -177 36.5 -157 C 36.5 -139 22 -122.5 0 -122.5 C -22 -122.5 -36.5 -139 -36.5 -157 C -36.5 -177 -21 -191 0 -191 Z" fill="#C98A5E" stroke="#624239" stroke-width="3"/>
+        <ellipse cx="-21" cy="-140.5" rx="7.5" ry="4.5" fill="#EC789A" opacity="0.5"/>
+        <ellipse cx="21" cy="-140.5" rx="7.5" ry="4.5" fill="#EC789A" opacity="0.5"/>
+        <path d="M -2.2 -145.5 C -1.2 -143.3 1.2 -143.3 2.2 -145.5" fill="none" stroke="#8E5034" stroke-width="1.7"/>
+        <circle cx="0" cy="-170.5" r="2.3" fill="#E75A42"/>
+
+        <g data-part="eyes" data-switch="eyes" data-pivot="0 -152">
+          <g data-state="open">
+            <ellipse cx="-13" cy="-152" rx="6.6" ry="9.6" fill="#2E1F2B"/>
+            <circle cx="-10.8" cy="-156" r="2.6" fill="#FFFFFF"/>
+            <circle cx="-15" cy="-148" r="1.2" fill="#FFFFFF"/>
+            <ellipse cx="13" cy="-152" rx="6.6" ry="9.6" fill="#2E1F2B"/>
+            <circle cx="15.2" cy="-156" r="2.6" fill="#FFFFFF"/>
+            <circle cx="11" cy="-148" r="1.2" fill="#FFFFFF"/>
+            <path d="M -18.6 -158.6 L -22.6 -161.8 M -19.6 -155.4 L -23.8 -156.8 M 18.6 -158.6 L 22.6 -161.8 M 19.6 -155.4 L 23.8 -156.8" fill="none" stroke="#2E1F2B" stroke-width="1.9"/>
+          </g>
+          <g data-state="wide" display="none">
+            <ellipse cx="-13" cy="-153" rx="7.6" ry="10.8" fill="#2E1F2B"/>
+            <circle cx="-10.4" cy="-157.5" r="3" fill="#FFFFFF"/>
+            <circle cx="-15.4" cy="-148.5" r="1.4" fill="#FFFFFF"/>
+            <ellipse cx="13" cy="-153" rx="7.6" ry="10.8" fill="#2E1F2B"/>
+            <circle cx="15.6" cy="-157.5" r="3" fill="#FFFFFF"/>
+            <circle cx="10.6" cy="-148.5" r="1.4" fill="#FFFFFF"/>
+            <path d="M -19.6 -160.6 L -23.6 -164 M -20.8 -157 L -25 -158.6 M 19.6 -160.6 L 23.6 -164 M 20.8 -157 L 25 -158.6" fill="none" stroke="#2E1F2B" stroke-width="1.9"/>
+          </g>
+          <g data-state="happy" display="none" fill="none" stroke="#2E1F2B" stroke-width="2.8">
+            <path d="M -19.5 -149.5 Q -13 -159 -6.5 -149.5"/>
+            <path d="M 6.5 -149.5 Q 13 -159 19.5 -149.5"/>
+            <path d="M -19.4 -152.6 L -23 -155.4 M 19.4 -152.6 L 23 -155.4" stroke-width="1.8"/>
+          </g>
+          <g data-state="closed" display="none" fill="none" stroke="#2E1F2B" stroke-width="2.6">
+            <path d="M -19.5 -152 Q -13 -147.5 -6.5 -152"/>
+            <path d="M 6.5 -152 Q 13 -147.5 19.5 -152"/>
+            <path d="M -19.3 -152.4 L -23 -154.2 M 19.3 -152.4 L 23 -154.2" stroke-width="1.8"/>
+          </g>
+          <g data-state="dizzy" display="none" fill="none" stroke="#2E1F2B" stroke-width="2">
+            <path d="M -12.2 -152 C -12.2 -151.9 -12.1 -151.4 -12.2 -151.2 C -12.3 -150.9 -12.6 -150.6 -13 -150.5 C -13.4 -150.4 -13.9 -150.4 -14.3 -150.7 C -14.7 -150.9 -15.1 -151.5 -15.2 -152 C -15.3 -152.5 -15.2 -153.3 -14.8 -153.8 C -14.4 -154.3 -13.7 -154.8 -13 -154.9 C -12.3 -155 -11.3 -154.8 -10.7 -154.3 C -10.1 -153.8 -9.5 -152.8 -9.4 -152 C -9.3 -151.2 -9.6 -149.9 -10.2 -149.2 C -10.8 -148.5 -12 -147.8 -13 -147.7 C -14 -147.6 -15.5 -148 -16.3 -148.7 C -17.1 -149.4 -17.9 -150.8 -18 -152 C -18.1 -153.2 -17.6 -154.8 -16.8 -155.8 C -15.9 -156.7 -14.3 -157.6 -13 -157.7 C -11.7 -157.8 -9.8 -157.2 -8.7 -156.3 C -7.7 -155.3 -7 -152.7 -6.6 -152"/>
+            <path d="M 12.2 -152 C 12.2 -152.1 12.1 -152.6 12.2 -152.8 C 12.3 -153.1 12.6 -153.4 13 -153.5 C 13.4 -153.6 13.9 -153.6 14.3 -153.3 C 14.7 -153.1 15.1 -152.5 15.2 -152 C 15.3 -151.5 15.2 -150.7 14.8 -150.2 C 14.4 -149.7 13.7 -149.2 13 -149.1 C 12.3 -149 11.3 -149.2 10.7 -149.7 C 10.1 -150.2 9.5 -151.2 9.4 -152 C 9.3 -152.8 9.6 -154.1 10.2 -154.8 C 10.8 -155.5 12 -156.2 13 -156.3 C 14 -156.4 15.5 -156 16.3 -155.3 C 17.1 -154.6 17.9 -153.2 18 -152 C 18.1 -150.8 17.6 -149.2 16.8 -148.2 C 15.9 -147.3 14.3 -146.4 13 -146.3 C 11.7 -146.2 9.8 -146.8 8.7 -147.7 C 7.7 -148.7 7 -151.3 6.6 -152"/>
+          </g>
+        </g>
+
+        <g data-part="brows" data-pivot="0 -170" fill="none" stroke="#3B2A33" stroke-width="2.4">
+          <path d="M -19 -169 Q -13.5 -174 -8 -171"/>
+          <path d="M 8 -171 Q 13.5 -174 19 -169"/>
+        </g>
+
+        <g data-part="mouth" data-switch="mouth" data-pivot="0 -133">
+          <g data-state="smile">
+            <path d="M -8 -136.5 C -4 -135 4 -135 8 -136.5 C 7 -129.5 3.5 -127 0 -127 C -3.5 -127 -7 -129.5 -8 -136.5 Z" fill="#7A3440" stroke="#624239" stroke-width="2.2"/>
+            <path d="M -3.8 -129 C -1.9 -131.3 1.9 -131.3 3.8 -129 C 2.4 -127.7 -2.4 -127.7 -3.8 -129 Z" fill="#EF8A87"/>
+          </g>
+          <g data-state="grin" display="none">
+            <path d="M -7.5 -134.5 Q 0 -127.5 7.5 -134.5" fill="none" stroke="#624239" stroke-width="2.6"/>
+          </g>
+          <g data-state="o" display="none">
+            <ellipse cx="0" cy="-131.5" rx="3.4" ry="4.2" fill="#7A3440" stroke="#624239" stroke-width="2"/>
+          </g>
+          <g data-state="laugh" display="none">
+            <path d="M -10 -137.5 C -5 -135.5 5 -135.5 10 -137.5 C 9 -127.5 4.5 -124 0 -124 C -4.5 -124 -9 -127.5 -10 -137.5 Z" fill="#7A3440" stroke="#624239" stroke-width="2.2"/>
+            <path d="M -4.8 -126.8 C -2.4 -129.8 2.4 -129.8 4.8 -126.8 C 3 -125.2 -3 -125.2 -4.8 -126.8 Z" fill="#EF8A87"/>
+          </g>
+          <g data-state="giggle" display="none">
+            <path d="M -6 -134 Q 0 -128.5 6 -134 Q 0 -131.5 -6 -134 Z" fill="#7A3440" stroke="#624239" stroke-width="2.2"/>
+          </g>
+        </g>
+
+        <g data-part="hairFront" data-pivot="0 -188">
+          <path d="M -38 -148 C -42 -174 -26 -197 0 -197 C 26 -197 42 -174 38 -148 C 35 -152 33 -158 30 -163 C 24 -173 12 -180 1.5 -182 L -1.5 -182 C -12 -180 -24 -173 -30 -163 C -33 -158 -35 -152 -38 -148 Z" fill="#3B2A33" stroke="#624239" stroke-width="3"/>
+          <path d="M -24 -186 C -18 -191 -10 -194 -3 -194" fill="none" stroke="#6B4C5E" stroke-width="2.2"/>
+          <path d="M 4 -194 C 12 -194 20 -190 26 -184" fill="none" stroke="#6B4C5E" stroke-width="2"/>
+          <path d="M 0 -183 L 0 -195" fill="none" stroke="#6B4C5E" stroke-width="1.4"/>
+        </g>
+
+        <!-- one asymmetrical hair bow at the ponytail tie -->
+        <g data-part="bow" data-pivot="-13 -201">
+          <path d="M -13 -201 C -18 -212 -32 -216 -33 -207 C -34 -199 -22 -197 -13 -201 Z" fill="#E75A42" stroke="#624239" stroke-width="2.2"/>
+          <path d="M -13 -201 C -9 -208 -1 -209 -1 -203.5 C -1 -198.5 -8 -198 -13 -201 Z" fill="#E75A42" stroke="#624239" stroke-width="2.2"/>
+          <path d="M -15 -199.5 L -19 -190 L -15.5 -191.5 L -13.5 -188.5 L -12 -199" fill="#E75A42" stroke="#624239" stroke-width="1.8"/>
+          <circle cx="-13" cy="-201" r="3" fill="#F2BB4B" stroke="#624239" stroke-width="1.8"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
